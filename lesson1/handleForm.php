@@ -1,10 +1,5 @@
 <?php
 
-/*
-0. POST vs GET
-
-*/
-
-$username = $_GET['username'];
+$username = $_POST['username'];
 
 echo $username;
