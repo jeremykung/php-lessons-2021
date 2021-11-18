@@ -1,0 +1,3 @@
+<?php 
+
+// Writing to DB
