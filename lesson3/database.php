@@ -1,8 +1,5 @@
 <?php 
 
-// Connect to Database
-
-
 try {
 
     // CONNECT TO DATABASE
@@ -15,7 +12,7 @@ try {
 
     // $result = $conn->query("SELECT * FROM `Message`");
     
-    $stmt = $conn->prepare("SELECT * FROM `Message`");
+    $stmt = $conn->prepare("SELECT ? ? FROM `Message`");
     $stmt->execute();
     
     $result = $stmt->fetchAll();
