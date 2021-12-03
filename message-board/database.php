@@ -3,15 +3,10 @@
 // $conn = new PDO("mysql:host=localhost;dbname=message_board", "root", "lhmethod");
 
 try {
-  $conn = new PDO("mysql:host=localhost;dbname=message_board", "root", "lhmethod");
+  $conn = new PDO("mysql:host=localhost;dbname=message_board", "root", "");
   // set the PDO error mode to exception
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  echo "Connected successfully";
-  $sql = "INSERT INTO `Message` (name, message)
-  VALUES ('Bob', 'Tennis this weekend?')";
-  // use exec() because no results are returned
-  $conn->exec($sql);
-  echo "New record created successfully";
+  echo "Connection Established";
 } catch(PDOException $e) {
   echo "Error: " . $e->getMessage();
 }
