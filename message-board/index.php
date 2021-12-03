@@ -14,8 +14,6 @@
             // CONNECT TO DATABASE
             try {
                 $conn = new PDO("mysql:host=localhost;dbname=message_board", 'root', '');
-                // set the PDO error mode to exception
-                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 echo "Connected successfully<br>";
             } catch (PDOException $e) {
                 echo "Error: " . $e->getMessage();
@@ -23,21 +21,21 @@
 
             // READ
 
-            // $result = $conn->query("SELECT * FROM `Message`");
-            
-            $stmt = $conn->prepare("SELECT * FROM `Message`");
-            $stmt->execute();
-
-            $result = $stmt->fetchAll();
+            $result = $conn->query("SELECT * FROM `Message`");
             var_dump($result);
+            
+            // $stmt = $conn->prepare("SELECT * FROM `Message`");
+            // $stmt->execute();
+            // $result = $stmt->fetchAll();
+
 
 
             foreach($result as $item) {
                 echo "<br>";
                 $name = $item["name"];
                 $message = $item["message"];
-                echo $name . "<br>";
-                echo $message . "<br>";
+                echo "<h3>$name</h3>";
+                echo "<p>$message</p>";
             }
 
 

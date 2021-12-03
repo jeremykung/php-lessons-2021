@@ -2,8 +2,13 @@
 
 // $conn = new PDO("mysql:host=localhost;dbname=message_board", "root", "lhmethod");
 
+$host = 'localhost';
+$dbname = 'message_board';
+$user: 'root';
+$pass: '';
+
 try {
-  $conn = new PDO("mysql:host=localhost;dbname=message_board", "root", "");
+  $conn = new PDO("mysql:host=$host;dbname=$dbname", "$user", "$pass");
   // set the PDO error mode to exception
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   echo "Connection Established";
