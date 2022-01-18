@@ -15,5 +15,4 @@ if (isset($_POST['submit'])) {
     echo "yes it is there";
 };
 
-
 setcookie("user", "8763", time() + 3600);
